@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raros Barbearia - Estilo & Elegância Masculina</title>
+
+  <!-- Fonte Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #050509;
+      --bg-card: #11111a;
+      --gold: #f5c451;
+      --gold-soft: #fbe3a3;
+      --text-light: #f9f9f9;
+      --text-muted: #b3b3c2;
+      --accent-red: #ff4b4b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: radial-gradient(circle at top, #151520 0, #050509 55%, #000 100%);
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* CONTAINER */
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* HEADER / NAV */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to right, rgba(5,5,9,0.96), rgba(12,12,20,0.96));
+      border-bottom: 1px solid rgba(245,196,81,0.15);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 16px rgba(245,196,81,0.35);
+      overflow: hidden;
+      background: #000;
+    }
+
+    .logo-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .logo-text span:first-child {
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+
+    .logo-text span:last-child {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.4rem;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-soft));
+      transition: width 0.2s ease;
+      border-radius: 999px;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-light);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .btn-nav {
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(245,196,81,0.75);
+      background: radial-gradient(circle at top left, rgba(245,196,81,0.3), rgba(12,12,20,0.8));
+      color: var(--bg-dark);
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      box-shadow: 0 0 18px rgba(245,196,81,0.45);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    }
+
+    .btn-nav:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.08);
+      box-shadow: 0 0 26px rgba(245,196,81,0.9);
+    }
+
+    /* MENU MOBILE */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      width: 22px;
+      height: 2px;
+      background: var(--text-light);
+      border-radius: 999px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 62px;
+        right: 1.5rem;
+        flex-direction: column;
+        background: rgba(8,8,15,0.98);
+        border-radius: 1rem;
+        padding: 0.9rem 1.2rem;
+        border: 1px solid rgba(245,196,81,0.25);
+        box-shadow: 0 20px 30px rgba(0,0,0,0.65);
+        display: none;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* HERO */
+    .hero {
+      padding: 3.8rem 0 3.2rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: stretch;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.18rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(245,196,81,0.35);
+      background: radial-gradient(circle at left, rgba(245,196,81,0.3), transparent 65%);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gold-soft);
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent-red);
+      box-shadow: 0 0 10px rgba(255,75,75,0.9);
+    }
+
+    .hero-title {
+      font-size: clamp(1.9rem, 4vw, 2.7rem);
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-title span {
+      color: var(--gold);
+      text-shadow: 0 0 22px rgba(245,196,81,0.7);
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+    }
+
+    @media (max-width: 480px) {
+      .hero-highlights {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .highlight-pill {
+      background: rgba(17,17,26,0.9);
+      border-radius: 1rem;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid rgba(245,196,81,0.25);
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.75rem;
+    }
+
+    .highlight-pill-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      border: 1px solid rgba(245,196,81,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+    }
+
+    .highlight-pill strong {
+      display: block;
+      font-size: 0.78rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      align-items: center;
+      margin-bottom: 1.8rem;
+    }
+
+    .btn-primary {
+      padding: 0.8rem 1.5rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, var(--gold), #ffdd8a);
+      color: #201b0c;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      box-shadow: 0 18px 32px rgba(0,0,0,0.65);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    }
+
+    .btn-primary span {
+      font-size: 1.1rem;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+      box-shadow: 0 24px 46px rgba(0,0,0,0.9);
+    }
+
+    .btn-ghost {
+      padding: 0.7rem 1.3rem;
+      border-radius: 999px;
+      border: 1px solid rgba(245,196,81,0.4);
+      background: transparent;
+      color: var(--gold-soft);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(245,196,81,0.1);
+      color: var(--text-light);
+      transform: translateY(-1px);
+    }
+
+    .hero-footnote {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .hero-footnote strong {
+      color: var(--gold-soft);
+    }
+
+    /* HERO CARD (DIREITA) */
+    .hero-card {
+      background: radial-gradient(circle at top, #1c1b24, #0a0a12);
+      border-radius: 1.5rem;
+      padding: 1.3rem 1.2rem 1.4rem;
+      border: 1px solid rgba(245,196,81,0.18);
+      box-shadow:
+        0 25px 40px rgba(0,0,0,0.88),
+        0 0 40px rgba(245,196,81,0.12);
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .hero-card-inner {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    @media (max-width: 480px) {
+      .hero-card-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* FOTO GENÉRICA NA AGENDA */
+    .barber-silhouette {
+      position: relative;
+      height: 100%;
+      min-height: 190px;
+      border-radius: 1.2rem;
+      overflow: hidden;
+      background: #050509;
+      border: 1px solid rgba(245,196,81,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .barber-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.1);
+    }
+
+    .barber-silhouette::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.65), transparent 40%);
+      pointer-events: none;
+    }
+
+    .hero-card-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.8rem;
+    }
+
+    .hero-card-info h3 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gold-soft);
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-card-info p {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.6rem 0 0.5rem;
+    }
+
+    .pill {
+      font-size: 0.7rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(245,196,81,0.4);
+      background: rgba(6,6,12,0.9);
+      color: var(--gold-soft);
+    }
+
+    .hours-box {
+      margin-top: 0.4rem;
+      border-radius: 0.9rem;
+      padding: 0.6rem 0.7rem;
+      background: rgba(6,6,12,0.94);
+      border: 1px solid rgba(245,196,81,0.25);
+    }
+
+    .hours-box strong {
+      font-size: 0.75rem;
+      color: var(--gold);
+    }
+
+    .hours-box div {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 2.4rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 1.8rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      color: var(--gold-soft);
+      opacity: 0.9;
+      margin-bottom: 0.25rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0.3rem auto 0;
+    }
+
+    /* DESTAQUES & GRID GENÉRICA */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: radial-gradient(circle at top, #181824, #080811);
+      border-radius: 1.2rem;
+      padding: 1rem;
+      border: 1px solid rgba(245,196,81,0.15);
+      box-shadow: 0 18px 30px rgba(0,0,0,0.85);
+      position: relative;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(245,196,81,0.24), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      border: 1px solid rgba(245,196,81,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.7rem;
+      font-size: 1.1rem;
+    }
+
+    .card h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .card p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .tagline {
+      font-size: 0.75rem;
+      color: var(--gold-soft);
+      margin-top: 0.5rem;
+    }
+
+    /* CARDS DE ESTILO (CABELO / BARBA) */
+    .style-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+    }
+
+    .style-thumb {
+      width: 72px;
+      height: 72px;
+      border-radius: 0.8rem;
+      object-fit: cover;
+      border: 1px solid rgba(245,196,81,0.7);
+      box-shadow: 0 0 16px rgba(0,0,0,0.7);
+      flex-shrink: 0;
+    }
+
+    .style-info h3 {
+      margin-bottom: 0.25rem;
+      font-size: 0.96rem;
+    }
+
+    .style-info p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* SERVIÇOS / TABELA */
+    .services-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1.7rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .services-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .service-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.9rem;
+      align-items: center;
+      padding: 0.8rem 1rem;
+      border-radius: 0.9rem;
+      background: rgba(10,10,18,0.96);
+      border: 1px solid rgba(245,196,81,0.2);
+    }
+
+    .service-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      font-size: 0.85rem;
+    }
+
+    .service-info span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .service-price {
+      font-weight: 600;
+      color: var(--gold-soft);
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .box-note {
+      margin-top: 0.7rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .box-note strong {
+      color: var(--gold-soft);
+    }
+
+    .services-sidebox {
+      background: radial-gradient(circle at top, #1a1b27, #080811);
+      border-radius: 1.2rem;
+      padding: 1rem;
+      border: 1px solid rgba(245,196,81,0.2);
+      box-shadow: 0 18px 30px rgba(0,0,0,0.9);
+    }
+
+    .services-sidebox h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .services-sidebox .btn-primary {
+      width: 100%;
+      justify-content: center;
+      margin-top: 0.8rem;
+    }
+
+    /* DEPOIMENTOS */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    @media (max-width: 900px) {
+      .testimonials {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .testimonials {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .testimonial-card {
+      background: rgba(10,10,18,0.96);
+      border-radius: 1.1rem;
+      padding: 0.9rem;
+      border: 1px solid rgba(245,196,81,0.18);
+      box-shadow: 0 18px 30px rgba(0,0,0,0.9);
+      font-size: 0.8rem;
+    }
+
+    .rating {
+      color: #ffdd7c;
+      margin-bottom: 0.3rem;
+      font-size: 0.8rem;
+    }
+
+    .testimonial-text {
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .testimonial-name {
+      font-weight: 500;
+      font-size: 0.8rem;
+    }
+
+    .testimonial-name span {
+      display: block;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    /* CONTATO / LOCAL */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.8rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-card {
+      background: rgba(10,10,18,0.96);
+      border-radius: 1.2rem;
+      padding: 1rem;
+      border: 1px solid rgba(245,196,81,0.2);
+      box-shadow: 0 18px 32px rgba(0,0,0,0.9);
+      font-size: 0.83rem;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-label {
+      min-width: 70px;
+      color: var(--gold-soft);
+      font-weight: 500;
+    }
+
+    .contact-value {
+      color: var(--text-muted);
+    }
+
+    .map-placeholder {
+      background: radial-gradient(circle at center, #222233, #060611);
+      border-radius: 1.2rem;
+      border: 1px dashed rgba(245,196,81,0.45);
+      padding: 0.4rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      overflow: hidden;
+    }
+
+    .map-placeholder strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: var(--gold-soft);
+      font-size: 0.8rem;
+    }
+
+    .map-placeholder iframe {
+      border: 0;
+      width: 100%;
+      height: 260px;
+      border-radius: 0.9rem;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(245,196,81,0.2);
+      padding: 1rem 0 1.4rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--gold-soft);
+    }
+
+    /* BOTÃO FLOTANTE WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
+      background: #25d366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: #fff;
+      box-shadow: 0 18px 36px rgba(0,0,0,0.85);
+      z-index: 60;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.06);
+      box-shadow: 0 24px 46px rgba(0,0,0,0.95);
+    }
+
+    .text-gold {
+      color: var(--gold-soft);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BOTÃO FLOTANTE WHATSAPP -->
+  <a
+    href="https://wa.me/5549998331869?text=Ol%C3%A1%20Raros%20Barbearia!%20Quero%20agendar%20um%20hor%C3%A1rio."
+    class="whatsapp-float"
+    aria-label="Agendar horário pelo WhatsApp"
+    target="_blank"
+  >
+    📞
+  </a>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <div class="logo-icon">
+          <img src="https://i.postimg.cc/676YBQ8J/558453385-17891220564349791-8811424532653587225-n.jpg" alt="Logo Raros Barbearia">
+        </div>
+        <div class="logo-text">
+          <span>Raros Barbearia</span>
+          <span>Estilo • Barba • Cabelo</span>
+        </div>
+      </div>
+
+      <nav>
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="nav-links" id="navLinks">
+          <a href="#sobre">Sobre</a>
+          <a href="#destaques">Destaques</a>
+          <a href="#estilos">Cortes</a>
+          <a href="#barbas">Barbas</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#contato">Contato</a>
+          <button class="btn-nav" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">
+            Agendar agora
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-eyebrow">
+            <span class="hero-eyebrow-dot"></span>
+            Raros Barbearia • Linha Premium
+          </div>
+          <h1 class="hero-title">
+            Muito mais que um corte,<br />
+            <span>uma experiência rara</span>.
+          </h1>
+          <p class="hero-subtitle">
+            Ambiente sofisticado, atendimento exclusivo e os melhores
+            profissionais para cuidar da sua barba, cabelo e estilo. Viva o padrão
+            <strong>Raros Barbearia</strong>.
+          </p>
+
+          <div class="hero-highlights">
+            <div class="highlight-pill">
+              <div class="highlight-pill-icon">⭐</div>
+              <div>
+                <strong>Atendimento com horário marcado</strong>
+                Agende pelo WhatsApp, sem filas nem espera.
+              </div>
+            </div>
+            <div class="highlight-pill">
+              <div class="highlight-pill-icon">💎</div>
+              <div>
+                <strong>Experiência Premium</strong>
+                Ambiente climatizado e com muito conforto.
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a
+              class="btn-primary"
+              href="https://wa.me/5549998331869?text=Ol%C3%A1%20Raros%20Barbearia!%20Quero%20agendar%20um%20hor%C3%A1rio."
+              target="_blank"
+            >
+              <span>🗓️</span> Agendar via WhatsApp
+            </a>
+            <button class="btn-ghost" onclick="document.getElementById('servicos').scrollIntoView({behavior:'smooth'})">
+              Ver tabela de serviços →
+            </button>
+          </div>
+
+          <p class="hero-footnote">
+            <strong>Promoção de estreia:</strong> combo corte + barba com valor especial em
+            dias selecionados. Consulte pelo WhatsApp.
+          </p>
+        </div>
+
+        <!-- CARD HERO DIREITA -->
+        <div class="hero-card">
+          <div class="hero-card-inner">
+            <div class="barber-silhouette">
+              <!-- FOTO GENÉRICA DE CADEIRA DE BARBEIRO -->
+              <img
+                class="barber-photo"
+                src="https://i.postimg.cc/W4vH7R3K/Story-do-instagram-de-agende-seu-horario-para-barbearia-ousado-laranja-e-branco.png"
+                alt="Cadeira de barbeiro em ambiente premium"
+              />
+            </div>
+            <div class="hero-card-info">
+              <div>
+                <h3>Agenda do Barbeiro</h3>
+                <p>
+                  Reserve seu horário e garanta atendimento no momento ideal para você.
+                  Sem pressa, sem tumulto – foco total no seu visual.
+                </p>
+                <div class="pill-list">
+                  <span class="pill">Corte Masculino</span>
+                  <span class="pill">Barba & Design</span>
+                  <span class="pill">Degradê Premium</span>
+                  <span class="pill">Tratamento de Barba</span>
+                </div>
+              </div>
+              <div class="hours-box">
+                <strong>Horário de Funcionamento</strong>
+                <div>Segunda a Sexta: 09h às 20h</div>
+                <div>Sábado: 09h às 18h</div>
+                <div style="margin-top: 0.25rem;">
+                  <span class="text-gold">Agende agora</span> e garanta seu horário preferido.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Sobre a Raros Barbearia</div>
+          <h2 class="section-title">Exclusividade, conforto e estilo em cada detalhe</h2>
+          <p class="section-subtitle">
+            A Raros Barbearia foi criada para o homem que valoriza sua imagem e o seu tempo.
+            Aqui você encontra um espaço moderno, atendimento diferenciado e serviços
+            pensados para elevar o seu visual.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTAQUES -->
+    <section id="destaques">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 1.4rem;">
+          <div class="section-eyebrow">Destaques que chamam atenção</div>
+          <h2 class="section-title">Motivos para escolher a Raros</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-icon">🥃</div>
+            <h3>Ambiente Premium</h3>
+            <p>
+              Espaço climatizado, música na medida certa, poltronas confortáveis
+              e aquele cuidado em cada detalhe para você relaxar.
+            </p>
+            <div class="tagline">Sinta-se em casa, em alto nível.</div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🎯</div>
+            <h3>Cortes Personalizados</h3>
+            <p>
+              Do clássico ao moderno, analisamos o seu estilo, formato de rosto
+              e rotina para entregar um visual que combina com você.
+            </p>
+            <div class="tagline">Seu corte, na sua melhor versão.</div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🧼</div>
+            <h3>Higiene & Segurança</h3>
+            <p>
+              Ferramentas esterilizadas, toalhas limpas e protocolos de higiene
+              para que você aproveite com total tranquilidade.
+            </p>
+            <div class="tagline">Cuidado com você em 1º lugar.</div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">⚡</div>
+            <h3>Atendimento com horário marcado</h3>
+            <p>
+              Evite espera desnecessária. Agende pelo WhatsApp e seja atendido
+              na hora certa, com total atenção.
+            </p>
+            <div class="tagline">Praticidade para o seu dia a dia.</div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">💈</div>
+            <h3>Experiência barbearia completa</h3>
+            <p>
+              Barba alinhada, cabelo impecável e produtos de qualidade para manter
+              o resultado por muito mais tempo.
+            </p>
+            <div class="tagline">Seu ritual de cuidado masculino.</div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🎁</div>
+            <h3>Pacotes & Combos especiais</h3>
+            <p>
+              Combos de corte + barba com condições especiais e benefícios extras
+              para clientes fiéis.
+            </p>
+            <div class="tagline">Peça para conhecer na sua próxima visita.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTILOS DE CORTE -->
+    <section id="estilos">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Estilos de Corte</div>
+          <h2 class="section-title">Escolha o corte que combina com você</h2>
+          <p class="section-subtitle">
+            Na Raros Barbearia você encontra desde os cortes clássicos até os mais modernos.
+            Confira alguns dos estilos mais pedidos e converse com o barbeiro para adaptar ao seu visual.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card style-card">
+            <img
+              class="style-thumb"
+              src="https://i.postimg.cc/jL78c5w2/download.jpg"
+              alt="Exemplo de corte Degradê (Fade)"
+            />
+            <div class="style-info">
+              <h3>Degradê (Fade)</h3>
+              <p>
+                Transição gradual do cabelo, curto nas laterais e nuca para mais longo no topo.
+                Pode ser feito em versões low, mid ou high fade, conforme o destaque desejado.
+              </p>
+            </div>
+          </div>
+
+          <div class="card style-card">
+            <img
+              class="style-thumb"
+              src="https://i.postimg.cc/NyY6v8st/Undercut.jpg"
+              alt="Exemplo de corte Undercut"
+            />
+            <div class="style-info">
+              <h3>Undercut</h3>
+              <p>
+                Laterais raspadas ou bem curtas, com topo longo, servindo de base para diversos
+                estilos modernos, do alinhado ao mais despojado.
+              </p>
+            </div>
+          </div>
+
+          <div class="card style-card">
+            <img
+              class="style-thumb"
+              src="https://i.postimg.cc/xJpMmWKs/Pompadour.jpg"
+              alt="Exemplo de corte Pompadour"
+            />
+            <div class="style-info">
+              <h3>Pompadour</h3>
+              <p>
+                Cabelo com volume no topo, penteado para trás, trazendo um estilo retrô sofisticado.
+                Combina muito bem com fade nas laterais.
+              </p>
+            </div>
+          </div>
+
+          <div class="card style-card">
+            <img
+              class="style-thumb"
+              src="https://i.postimg.cc/Vrh0vX8R/Moicano_(Mohawk).jpg"
+              alt="Exemplo de corte Moicano"
+            />
+            <div class="style-info">
+              <h3>Moicano (Mohawk)</h3>
+              <p>
+                Faixa de cabelo mais longa no centro da cabeça, com laterais raspadas ou curtas.
+                Ideal para quem quer um visual mais marcante e moderno.
+              </p>
+            </div>
+          </div>
+
+          <div class="card style-card">
+            <img
+              class="style-thumb"
+              src="https://i.postimg.cc/8jMfkFnv/Militar_(Buzz_Crew_Cut).jpg"
+              alt="Exemplo de corte Militar"
+            />
+            <div class="style-info">
+              <h3>Militar (Buzz/Crew Cut)</h3>
+              <p>
+                Corte curto e prático, inspirado no estilo militar. Fácil de manter no dia a dia
+                e perfeito para quem quer praticidade.
+              </p>
+            </div>
+          </div>
+
+          <div class="card style-card">
+            <img
+              class="style-thumb"
+              src="https://i.postimg.cc/McPv31Xt/Top_Knot.jpg"
+              alt="Exemplo de corte Top Knot"
+            />
+            <div class="style-info">
+              <h3>Top Knot</h3>
+              <p>
+                Coque no topo da cabeça, muitas vezes combinado com laterais desfiadas ou em undercut.
+                Visual moderno e estiloso para cabelos mais longos.
+              </p>
+            </div>
+          </div>
+
+          <div class="card style-card">
+            <img
+              class="style-thumb"
+              src="https://i.postimg.cc/ctYCJjTy/Razor_Part.jpg"
+              alt="Exemplo de corte Razor Part"
+            />
+            <div class="style-info">
+              <h3>Razor Part</h3>
+              <p>
+                Corte com uma linha raspada (risca) na lateral, adicionando um detalhe moderno e marcante
+                ao visual, podendo ser usado em vários tipos de corte.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTILOS DE BARBA -->
+    <section id="barbas">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Estilos de Barba</div>
+          <h2 class="section-title">Deixe a barba no padrão Raros</h2>
+          <p class="section-subtitle">
+            A barba certa muda completamente o visual. Veja alguns estilos em alta e descubra
+            com o barbeiro qual combina melhor com o seu formato de rosto e seu estilo de vida.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card style-card">
+            <img
+              class="style-thumb"
+              src="https://i.postimg.cc/q68BrKMJ/Barba_triangular.jpg"
+              alt="Exemplo de barba triangular"
+            />
+            <div class="style-info">
+              <h3>Barba triangular</h3>
+              <p>
+                Volume concentrado no queixo, com linhas bem marcadas para alongar o rosto.
+                Ideal para quem quer destaque na parte inferior do rosto e um visual moderno.
+              </p>
+            </div>
+          </div>
+
+          <div class="card style-card">
+            <img
+              class="style-thumb"
+              src="https://i.postimg.cc/1gNNFV1Q/Barba_arredondada.jpg"
+              alt="Exemplo de barba arredondada"
+            />
+            <div class="style-info">
+              <h3>Barba arredondada</h3>
+              <p>
+                Barba curta que segue a curva natural do rosto, perfeita para rostos redondos,
+                quadrados ou em formato de diamante, sem adicionar volume nas bochechas.
+              </p>
+            </div>
+          </div>
+
+          <div class="card style-card">
+            <img
+              class="style-thumb"
+              src=""https://i.postimg.cc/4n1HpTqR/Cavanhaque_(Barbicha).jpg"
+              alt="Exemplo de cavanhaque"
+            />
+            <div class="style-info">
+              <h3>Cavanhaque</h3>
+              <p>
+                Barba focada no queixo, com ou sem bigode. Versátil, combina tanto com estilo
+                mais clássico quanto moderno.
+              </p>
+            </div>
+          </div>
+
+          <div class="card style-card">
+            <img
+              class="style-thumb"
+              src="https://i.postimg.cc/gXWr6MK2/Balbo.jpg"
+              alt="Exemplo de barba Balbo"
+            />
+            <div class="style-info">
+              <h3>Balbo</h3>
+              <p>
+                Combina cavanhaque e bigode separados, com bochechas raspadas.
+                Um estilo marcante e elegante para quem gosta de definição.
+              </p>
+            </div>
+          </div>
+
+          <div class="card style-card">
+            <img
+              class="style-thumb"
+              src="https://i.postimg.cc/bdqsyBrN/Barba_italiana.jpg"
+              alt="Exemplo de barba italiana"
+            />
+            <div class="style-info">
+              <h3>Barba italiana</h3>
+              <p>
+                Variação da barba cheia que vem ganhando força em 2025. Mantém boa cobertura,
+                mas com contornos mais limpos e modernos.
+              </p>
+            </div>
+          </div>
+
+          <div class="card style-card">
+            <img
+              class="style-thumb"
+              src="https://i.postimg.cc/qz5RGBLK/Teeny_Strap_Moderno.jpg"
+              alt="Exemplo de Teeny Strap Moderno"
+            />
+            <div class="style-info">
+              <h3>Teeny Strap Moderno</h3>
+              <p>
+                Linha fina acompanhando o maxilar, com um pouco mais de volume que o modelo
+                tradicional. Ideal para contornar o rosto com sutileza.
+              </p>
+            </div>
+          </div>
+
+          <div class="card style-card">
+            <img
+              class="style-thumb"
+              src="https://i.postimg.cc/CB7Mnw1r/Bush_Beard.jpg"
+              alt="Exemplo de Bush Beard"
+            />
+            <div class="style-info">
+              <h3>Bush Beard</h3>
+              <p>
+                Barba volumosa e mais longa, com aparência quase desalinhada na parte frontal,
+                mas laterais e bigode bem cuidados. Visual robusto e de presença.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Serviços & Valores</div>
+          <h2 class="section-title">Cortes e cuidados na medida certa</h2>
+          <p class="section-subtitle">
+            Confira a tabela base de serviços da Raros Barbearia. Valores podem
+            variar conforme estilo, comprimento de cabelo e combos.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div>
+            <div class="services-list">
+              <div class="service-item">
+                <div class="service-info">
+                  <strong>Corte Masculino Premium</strong>
+                  <span>Acabamento detalhado e finalização com produto.</span>
+                </div>
+                <div class="service-price">R$ 45,00</div>
+              </div>
+
+              <div class="service-item">
+                <div class="service-info">
+                  <strong>Barba & Design</strong>
+                  <span>Alinhamento, desenho e finalização com loção.</span>
+                </div>
+                <div class="service-price">R$ 35,00</div>
+              </div>
+
+              <div class="service-item">
+                <div class="service-info">
+                  <strong>Combo Corte + Barba</strong>
+                  <span>Pacote completo para renovar o visual.</span>
+                </div>
+                <div class="service-price text-gold">R$ 65,00</div>
+              </div>
+
+              <div class="service-item">
+                <div class="service-info">
+                  <strong>Degradê / Fade</strong>
+                  <span>Acabamento moderno com transição suave.</span>
+                </div>
+                <div class="service-price">R$ 50,00</div>
+              </div>
+
+              <div class="service-item">
+                <div class="service-info">
+                  <strong>Tratamento de Barba</strong>
+                  <span>Hidratação, esfoliação e cuidados especiais.</span>
+                </div>
+                <div class="service-price">R$ 40,00</div>
+              </div>
+            </div>
+
+            <p class="box-note">
+              <strong>Observação:</strong> valores podem ser ajustados conforme promoções,
+              combos e fidelidade. Consulte sempre pelo WhatsApp para o valor atualizado.
+            </p>
+          </div>
+
+          <div class="services-sidebox">
+            <h3>Garanta seu horário agora</h3>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.7rem;">
+              Clique no botão abaixo para falar com a Raros Barbearia no WhatsApp e
+              já sair com o horário reservado.
+            </p>
+
+            <div class="hours-box">
+              <strong>Horários com menor movimento</strong>
+              <div>Manhã (09h às 11h) • Tarde (14h às 16h)</div>
+              <div style="margin-top: 0.25rem;">
+                Dica: agende nesses períodos para um atendimento ainda mais tranquilo.
+              </div>
+            </div>
+
+            <a
+              class="btn-primary"
+              href="https://wa.me/5549998331869?text=Quero%20agendar%20um%20hor%C3%A1rio%20na%20Raros%20Barbearia!"
+              target="_blank"
+            >
+              Agendar pelo WhatsApp
+            </a>
+
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.6rem;">
+              Resposta rápida e atendimento direto com o barbeiro.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Experiência de quem já veio</div>
+          <h2 class="section-title">Clientes que saíram renovados</h2>
+        </div>
+
+        <div class="testimonials">
+          <div class="testimonial-card">
+            <div class="rating">★★★★★</div>
+            <p class="testimonial-text">
+              Atendimento top, corte do jeito que eu queria e ambiente muito
+              confortável. Com certeza virei cliente fixo.
+            </p>
+            <div class="testimonial-name">
+              João Silva
+              <span>Cliente Raros Barbearia</span>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="rating">★★★★★</div>
+            <p class="testimonial-text">
+              O barbeiro entende o que faz, explicou o melhor corte pro meu tipo
+              de rosto. Saí muito satisfeito.
+            </p>
+            <div class="testimonial-name">
+              Marcelo Andrade
+              <span>Empresário</span>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="rating">★★★★★</div>
+            <p class="testimonial-text">
+              Já experimentei várias barbearias, mas a Raros se destaca no
+              cuidado e nos detalhes. Super recomendo.
+            </p>
+            <div class="testimonial-name">
+              Rafael Costa
+              <span>Cliente fiel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO / LOCALIZAÇÃO -->
+    <section id="contato">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Contato & Localização</div>
+          <h2 class="section-title">Venha viver a experiência Raros</h2>
+          <p class="section-subtitle">
+            Entre em contato para agendar seu horário ou tirar dúvidas. Será um
+            prazer receber você na Raros Barbearia.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-row">
+              <div class="contact-label">WhatsApp</div>
+              <div class="contact-value">
+                <a href="https://wa.me/5549998331869" target="_blank">
+                  (49) 99833-1869
+                </a>
+                <br />
+                <span style="font-size: 0.75rem;">
+                  Clique no número ou no botão verde para falar direto com a barbearia.
+                </span>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <div class="contact-label">Instagram</div>
+              <div class="contact-value">
+                <a href="#" target="_blank">@danielferreira_barbeiro</a><br />
+                <span style="font-size: 0.75rem;">Acompanhe cortes, novidades e promoções.</span>
+              </div>
+            </div>
+
+            <div class="contact-row">
+  <div class="contact-label">Endereço</div>
+  <div class="contact-value">
+    R. Rio de Janeiro 800 - D - Presidente Médici , Chapecó - SC - 89801-140
+  </div>
+</div>
+
+            <div class="contact-row">
+              <div class="contact-label">Horários</div>
+              <div class="contact-value">
+                Segunda a Sexta: 09h às 19h<br />
+                Sábado: 09h às 18h
+              </div>
+            </div>
+          </div>
+
+        <div class="map-placeholder">
+  <strong>Como chegar na Raros Barbearia</strong>
+
+  <a 
+    href="https://www.google.com/maps/place/Royale+Residence/@-27.0881545,-52.6319293,6050m/data=!3m1!1e3!4m6!3m5!1s0x94e4b7006f0bf247:0x44016fecb13daacc!8m2!3d-27.0924991!4d-52.6094194!16s%2Fg%2F11xcqm63ft?entry=ttu"
+    target="_blank"
+    style="display: block; margin-top: 0.4rem;"
+  >
+    <img 
+      src="https://i.postimg.cc/HLBB0qX4/Screenshot_1.png" 
+      alt="Localização exata da Raros Barbearia"
+      style="width: 100%; border-radius: 0.9rem; transition: 0.2s ease-in-out; cursor: pointer;"
+    >
+  </a>
+
+  <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.6rem;">
+    Clique na imagem para abrir a localização no Google Maps.
+  </p>
+</div>
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Raros Barbearia – Todos os direitos reservados.
+      Desenvolvido para destacar o seu estilo.
+    </div>
+  </footer>
+
+  <script>
+    // Ano automático no rodapé
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Menu mobile
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    // Fecha menu ao clicar em link no mobile
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+      });
+    });
+  </script>
+</body>
+</html>
