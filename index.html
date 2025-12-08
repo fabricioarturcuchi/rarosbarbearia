@@ -800,11 +800,101 @@
       font-size: 0.8rem;
     }
 
-    .map-placeholder iframe {
-      border: 0;
+    /* GALERIA (SLIDER) */
+    #galeria {
+      padding-top: 2.4rem;
+    }
+
+    .slider {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 1.2rem;
+      overflow: hidden;
+      border: 1px solid rgba(245,196,81,0.3);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.9);
+      background: #050509;
+    }
+
+    .slides {
+      position: relative;
       width: 100%;
-      height: 260px;
-      border-radius: 0.9rem;
+      height: 0;
+      padding-bottom: 56%; /* 16:9 */
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(245,196,81,0.8);
+      background: rgba(0,0,0,0.6);
+      color: var(--gold-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      z-index: 2;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .slider-btn:hover {
+      background: rgba(0,0,0,0.85);
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .slider-btn.prev {
+      left: 10px;
+    }
+
+    .slider-btn.next {
+      right: 10px;
+    }
+
+    .slider-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 2;
+    }
+
+    .slider-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(245,196,81,0.7);
+      background: rgba(0,0,0,0.7);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .slider-dot.active {
+      background: var(--gold);
+      transform: scale(1.1);
     }
 
     /* FOOTER */
@@ -885,6 +975,7 @@
         <div class="nav-links" id="navLinks">
           <a href="#sobre">Sobre</a>
           <a href="#destaques">Destaques</a>
+          <a href="#galeria">Galeria</a>
           <a href="#estilos">Cortes</a>
           <a href="#barbas">Barbas</a>
           <a href="#servicos">Serviços</a>
@@ -941,8 +1032,8 @@
             >
               <span>🗓️</span> Agendar via WhatsApp
             </a>
-            <button class="btn-ghost" onclick="document.getElementById('servicos').scrollIntoView({behavior:'smooth'})">
-              Ver tabela de serviços →
+            <button class="btn-ghost" onclick="document.getElementById('galeria').scrollIntoView({behavior:'smooth'})">
+              Ver fotos do local →
             </button>
           </div>
 
@@ -979,8 +1070,8 @@
               </div>
               <div class="hours-box">
                 <strong>Horário de Funcionamento</strong>
-                <div>Segunda a Sexta: 08h às 19h</div>
-                <div>Sábado: 08h às 18h</div>
+                <div>Segunda a Sexta: 09h às 20h</div>
+                <div>Sábado: 09h às 18h</div>
                 <div style="margin-top: 0.25rem;">
                   <span class="text-gold">Agende agora</span> e garanta seu horário preferido.
                 </div>
@@ -1074,6 +1165,47 @@
               para clientes fiéis.
             </p>
             <div class="tagline">Peça para conhecer na sua próxima visita.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIA - SLIDER -->
+    <section id="galeria">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Galeria do Espaço</div>
+          <h2 class="section-title">Veja um pouco da Raros Barbearia</h2>
+          <p class="section-subtitle">
+            Fotos do ambiente para você sentir a vibe antes mesmo de chegar.
+            Depois você pode trocar pelas fotos reais do seu espaço.
+          </p>
+        </div>
+
+        <div class="slider" id="slider">
+          <div class="slides">
+            <div class="slide active">
+              <img src="https://images.pexels.com/photos/3998429/pexels-photo-3998429.jpeg" alt="Ambiente interno da barbearia 1">
+            </div>
+            <div class="slide">
+              <img src="https://images.pexels.com/photos/3993446/pexels-photo-3993446.jpeg" alt="Ambiente interno da barbearia 2">
+            </div>
+            <div class="slide">
+              <img src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg" alt="Detalhes da barbearia">
+            </div>
+            <div class="slide">
+              <img src="https://images.pexels.com/photos/3992874/pexels-photo-3992874.jpeg" alt="Estação de corte da barbearia">
+            </div>
+          </div>
+
+          <button class="slider-btn prev" type="button" aria-label="Anterior">‹</button>
+          <button class="slider-btn next" type="button" aria-label="Próximo">›</button>
+
+          <div class="slider-dots" id="sliderDots">
+            <div class="slider-dot active" data-index="0"></div>
+            <div class="slider-dot" data-index="1"></div>
+            <div class="slider-dot" data-index="2"></div>
+            <div class="slider-dot" data-index="3"></div>
           </div>
         </div>
       </div>
@@ -1250,7 +1382,7 @@
               alt="Exemplo de cavanhaque"
             />
             <div class="style-info">
-              <h3>Cavanhaque</h3>
+              <h3>Cavanhaque (Barbicha)</h3>
               <p>
                 Barba focada no queixo, com ou sem bigode. Versátil, combina tanto com estilo
                 mais clássico quanto moderno.
@@ -1492,17 +1624,20 @@
             <div class="contact-row">
               <div class="contact-label">Instagram</div>
               <div class="contact-value">
-                <a href="#" target="_blank">@danielferreira_barbeiro</a><br />
+                <a href="https://instagram.com/danielferreira_barbeiro" target="_blank">
+                  @danielferreira_barbeiro
+                </a><br />
                 <span style="font-size: 0.75rem;">Acompanhe cortes, novidades e promoções.</span>
               </div>
             </div>
 
             <div class="contact-row">
-  <div class="contact-label">Endereço</div>
-  <div class="contact-value">
-    R. Rio de Janeiro 800 - D - Presidente Médici , Chapecó - SC - 89801-140
-  </div>
-</div>
+              <div class="contact-label">Endereço</div>
+              <div class="contact-value">
+                R. Rio de Janeiro 800 - D - Presidente Médici<br />
+                Chapecó - SC - 89801-140
+              </div>
+            </div>
 
             <div class="contact-row">
               <div class="contact-label">Horários</div>
@@ -1513,26 +1648,25 @@
             </div>
           </div>
 
-        <div class="map-placeholder">
-  <strong>Como chegar na Raros Barbearia</strong>
+          <div class="map-placeholder">
+            <strong>Como chegar na Raros Barbearia</strong>
 
-  <a 
-    href="https://www.google.com/maps/place/Royale+Residence/@-27.0881545,-52.6319293,6050m/data=!3m1!1e3!4m6!3m5!1s0x94e4b7006f0bf247:0x44016fecb13daacc!8m2!3d-27.0924991!4d-52.6094194!16s%2Fg%2F11xcqm63ft?entry=ttu"
-    target="_blank"
-    style="display: block; margin-top: 0.4rem;"
-  >
-    <img 
-      src="https://i.postimg.cc/HLBB0qX4/Screenshot_1.png" 
-      alt="Localização exata da Raros Barbearia"
-      style="width: 100%; border-radius: 0.9rem; transition: 0.2s ease-in-out; cursor: pointer;"
-    >
-  </a>
+            <a
+              href="https://www.google.com/maps/place/Royale+Residence/@-27.0881545,-52.6319293,6050m/data=!3m1!1e3!4m6!3m5!1s0x94e4b7006f0bf247:0x44016fecb13daacc!8m2!3d-27.0924991!4d-52.6094194!16s%2Fg%2F11xcqm63ft?entry=ttu"
+              target="_blank"
+              style="display: block; margin-top: 0.4rem;"
+            >
+              <img 
+                src="https://i.postimg.cc/HLBB0qX4/Screenshot_1.png" 
+                alt="Localização exata da Raros Barbearia"
+                style="width: 100%; border-radius: 0.9rem; transition: 0.2s ease-in-out; cursor: pointer;"
+              >
+            </a>
 
-  <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.6rem;">
-    Clique na imagem para abrir a localização no Google Maps.
-  </p>
-</div>
-
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.6rem;">
+              Clique na imagem para abrir a localização no Google Maps.
+            </p>
+          </div>
 
         </div>
       </div>
@@ -1564,6 +1698,70 @@
         navLinks.classList.remove("show");
       });
     });
+
+    // Slider (Galeria)
+    const slides = document.querySelectorAll("#slider .slide");
+    const dots = document.querySelectorAll("#sliderDots .slider-dot");
+    const prevBtn = document.querySelector("#slider .prev");
+    const nextBtn = document.querySelector("#slider .next");
+
+    let currentSlide = 0;
+    let sliderInterval = null;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      let nextIndex = currentSlide + 1;
+      if (nextIndex >= slides.length) nextIndex = 0;
+      showSlide(nextIndex);
+    }
+
+    function prevSlide() {
+      let prevIndex = currentSlide - 1;
+      if (prevIndex < 0) prevIndex = slides.length - 1;
+      showSlide(prevIndex);
+    }
+
+    function startAutoSlide() {
+      sliderInterval = setInterval(nextSlide, 5000);
+    }
+
+    function stopAutoSlide() {
+      if (sliderInterval) clearInterval(sliderInterval);
+    }
+
+    nextBtn.addEventListener("click", () => {
+      stopAutoSlide();
+      nextSlide();
+      startAutoSlide();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      stopAutoSlide();
+      prevSlide();
+      startAutoSlide();
+    });
+
+    dots.forEach(dot => {
+      dot.addEventListener("click", () => {
+        const index = parseInt(dot.getAttribute("data-index"), 10);
+        stopAutoSlide();
+        showSlide(index);
+        startAutoSlide();
+      });
+    });
+
+    // Inicia slider automático
+    showSlide(0);
+    startAutoSlide();
   </script>
 </body>
 </html>
